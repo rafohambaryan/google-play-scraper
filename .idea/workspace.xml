@@ -21,10 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9bdcd98b-8e3a-4774-80c7-bc38b3a3e40f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/GoogleFastGame.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/GoogleFastGame.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/NewGamesCron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/NewGamesCron.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_062541_create_google_play_store_developers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_062541_create_google_play_store_developers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_062559_create_google_play_store_games_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_062559_create_google_play_store_games_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_062560_create_google_play_store_game_screens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_062560_create_google_play_store_game_screens_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/TestCron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/TestCron.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -196,7 +195,8 @@
       <workItem from="1608553387929" duration="3331000" />
       <workItem from="1608558026873" duration="42000" />
       <workItem from="1608559022942" duration="555000" />
-      <workItem from="1608565103196" duration="179000" />
+      <workItem from="1608565103196" duration="337000" />
+      <workItem from="1608574816073" duration="2472000" />
     </task>
     <servers />
   </component>

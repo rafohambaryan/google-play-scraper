@@ -60,8 +60,13 @@ class NewGamesCron extends Command
                 } catch (GooglePlayException $exception) {
                     continue 1;
                 }
+                catch (\Exception $exception) {
+                    continue 1;
+                }
             }
         } catch (GooglePlayException $exception) {
+        }
+        catch (\Exception $exception) {
         }
 
     }
@@ -282,6 +287,9 @@ class NewGamesCron extends Command
                         $newGameCount++;
                     } catch (GooglePlayException $exception) {
                         $err_req++;
+                        continue 1;
+                    }
+                    catch (\Exception $exception) {
                         continue 1;
                     }
                 }

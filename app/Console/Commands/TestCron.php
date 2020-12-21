@@ -65,8 +65,13 @@ class TestCron extends Command
                 } catch (GooglePlayException $exception) {
                     continue 1;
                 }
+                catch (\Exception $exception) {
+                    continue 1;
+                }
             }
         } catch (GooglePlayException $exception) {
+        }
+        catch (\Exception $exception) {
         }
         return [
             'req' => $requestCount,
@@ -237,14 +242,16 @@ class TestCron extends Command
         $requestCount = 0;
         $newGameCount = 0;
         $google = new GPlayApps();
-        $strs = [];
+        $strs = [
+            'games'
+        ];
         $strstr = 0;
-        for($i = 0; $i < 300; $i++){
-            $str = $this->generateRandomString(4);
+        for($i = 0; $i < 400; $i++){
+            $str = $this->generateRandomString(3);
             if (!in_array($str,$strs)){
                 $strs[] = $str;
                 $strstr++;
-                if ($strstr >= 4){
+                if ($strstr >= 30){
                     break 1;
                 }
             }
@@ -253,7 +260,7 @@ class TestCron extends Command
         foreach ($strs as $ib) {
             $loopCount++;
             $requestCount += 1;
-            $apps = $google->search($ib, 500);
+            $apps = $google->search($ib, 250);
             foreach ($apps as $appId) {
                 $loopCount++;
                 try {
@@ -305,6 +312,8 @@ class TestCron extends Command
                     $newGameCount += $this->createdGame($app, $developer, $category);
 
                 } catch (\Nelexa\GPlay\Exception\GooglePlayException $exception) {
+                    continue 1;
+                }catch (\Exception $exception) {
                     continue 1;
                 }
             }

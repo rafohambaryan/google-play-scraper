@@ -14,21 +14,22 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">Release Date</th>
+{{--            <th scope="col">Release Date</th>--}}
             <th scope="col">Games ({{$count}})</th>
+            <th scope="col">Developers ({{$dev}})</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($games as $game)
-            <tr>
-                <th>{{$game->releaseDate}}</th>
-                <td>{{$game->dateCount}}</td>
-            </tr>
-        @endforeach
+{{--        @foreach($games as $game)--}}
+{{--            <tr>--}}
+{{--                <th>{{$game->releaseDate}}</th>--}}
+{{--                <td>{{$game->dateCount}}</td>--}}
+{{--            </tr>--}}
+{{--        @endforeach--}}
         </tbody>
     </table>
 </div>
-{{$games->links()}}
+{{--{{$games->links()}}--}}
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

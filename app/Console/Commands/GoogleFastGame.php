@@ -67,8 +67,13 @@ class GoogleFastGame extends Command
                 } catch (GooglePlayException $exception) {
                     continue 1;
                 }
+                catch (\Exception $exception){
+                    continue 1;
+                }
             }
         } catch (GooglePlayException $exception) {
+        }
+        catch (\Exception $exception){
         }
         return [
             'req' => $requestCount,
@@ -230,13 +235,16 @@ class GoogleFastGame extends Command
         $newGameCount = 0;
         $google = new GPlayApps();
         $categories = GooglePlayStoreCategory::all();
+        $apps1 = $google->getNewApps();
+        $appsTop1 = $google->getTopApps();
+        $appsList1 = $google->getListApps();
         foreach ($categories as $index => $category) {
             $loopCount++;
             $requestCount += 3;
             $apps = $google->getNewApps($category->code);
             $appsTop = $google->getTopApps($category->code);
             $appsList = $google->getListApps($category->code);
-            foreach (array_merge($apps, $appsTop, $appsList) as $appId) {
+            foreach (array_merge($apps, $appsTop, $appsList,$apps1, $appsTop1, $appsList1) as $appId) {
                 $loopCount++;
                 try {
 
@@ -291,7 +299,9 @@ class GoogleFastGame extends Command
                     }
                     $newGameCount += $this->createdGame($app, $developer, $category);
 
-                } catch (\Nelexa\GPlay\Exception\GooglePlayException $exception) {
+                } catch (GooglePlayException $exception) {
+                    continue 1;
+                }catch (\Exception $exception){
                     continue 1;
                 }
             }
