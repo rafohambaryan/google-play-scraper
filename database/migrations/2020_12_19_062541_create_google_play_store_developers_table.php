@@ -22,11 +22,11 @@ class CreateGooglePlayStoreDevelopersTable extends Migration
             $table->dateTime('lastReleasedDate')->nullable();
             $table->dateTime('lastUpdatedDate')->nullable();
             $table->dateTime('lastVersionDate')->nullable();
-            $table->string('url')->nullable();
+            $table->longText('url')->nullable();
             $table->string('website')->nullable();
             $table->string('cover')->nullable();
             $table->string('icon')->nullable();
-            $table->text('address')->nullable();
+            $table->longText('address')->nullable();
             $table->timestamps();
         });
     }

@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bdcd98b-8e3a-4774-80c7-bc38b3a3e40f" name="Default Changelist" comment="" />
+    <list default="true" id="9bdcd98b-8e3a-4774-80c7-bc38b3a3e40f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/NewGamesCron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/NewGamesCron.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_062541_create_google_play_store_developers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_062541_create_google_play_store_developers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_062559_create_google_play_store_games_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_062559_create_google_play_store_games_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_062560_create_google_play_store_game_screens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_062560_create_google_play_store_game_screens_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -17,6 +43,9 @@
         <option value="composer.json" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -123,9 +152,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testing-api" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -150,20 +180,73 @@
       <option name="presentableId" value="Default" />
       <updated>1608359024484</updated>
       <workItem from="1608359026837" duration="21067000" />
+      <workItem from="1608392923078" duration="1884000" />
+      <workItem from="1608397603992" duration="1479000" />
+      <workItem from="1608399804268" duration="1611000" />
+      <workItem from="1608408390806" duration="1816000" />
+      <workItem from="1608442272807" duration="1199000" />
+      <workItem from="1608450833220" duration="273000" />
+      <workItem from="1608451313029" duration="105000" />
+      <workItem from="1608462499983" duration="12153000" />
+      <workItem from="1608475505463" duration="525000" />
+      <workItem from="1608482722215" duration="5007000" />
+      <workItem from="1608494330660" duration="865000" />
+      <workItem from="1608533689070" duration="563000" />
+      <workItem from="1608534324354" duration="775000" />
+      <workItem from="1608553387929" duration="3331000" />
+      <workItem from="1608558026873" duration="42000" />
+      <workItem from="1608559022942" duration="555000" />
+      <workItem from="1608565103196" duration="179000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608363858415">
+    <state x="552" y="177" key="#Deployment" timestamp="1608393452434">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608363858415" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608390217495">
+    <state x="552" y="177" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1608393452434" />
+    <state x="1003" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608469623622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608390217495" />
+    <state x="1003" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608469623622" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608494543958">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608494543958" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1608396267146">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608396267146" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608494588587">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608494588587" />
+    <state x="859" y="249" key="ftp.server.browser" timestamp="1608393450991">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="859" y="249" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1608393450991" />
+    <state x="830" y="411" key="publish.login" timestamp="1608397682180">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="830" y="411" key="publish.login/0.0.1920.1040@0.0.1920.1040" timestamp="1608397682180" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608487839057">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608487839057" />
   </component>
 </project>

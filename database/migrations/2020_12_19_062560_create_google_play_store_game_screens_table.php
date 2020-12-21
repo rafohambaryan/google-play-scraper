@@ -18,7 +18,7 @@ class CreateGooglePlayStoreGameScreensTable extends Migration
             $table->unsignedBigInteger('game_id')->index();
             $table->string('hashUrl')->nullable();
             $table->string('size')->nullable();
-            $table->string('url')->nullable();
+            $table->longText('url')->nullable();
             $table->foreign('game_id')->references('id')->on('google_play_store_games')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });

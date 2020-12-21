@@ -23,11 +23,11 @@ class CreateGooglePlayStoreGamesTable extends Migration
             $table->string('categoryName')->nullable();
             $table->string('contentRating')->nullable();
             $table->string('country')->nullable();
-            $table->text('description')->nullable();
-            $table->string('fullUrl')->nullable();
+            $table->longText('description')->nullable();
+            $table->longText('fullUrl')->nullable();
             $table->string('installs')->nullable();
-            $table->string('videoUrl')->nullable();
-            $table->string('videoImgUrl')->nullable();
+            $table->longText('videoUrl')->nullable();
+            $table->longText('videoImgUrl')->nullable();
             $table->string('videoId')->nullable();
             $table->dateTime('releaseDate')->nullable();
             $table->dateTime('updatedDate')->nullable();
@@ -49,8 +49,8 @@ class CreateGooglePlayStoreGamesTable extends Migration
             $table->boolean('inactive')->default(false);
             $table->boolean('isFree')->default(true);
             $table->string('locale')->nullable();
-            $table->string('privacyPoliceUrl')->nullable();
-            $table->string('url')->nullable();
+            $table->longText('privacyPoliceUrl')->nullable();
+            $table->longText('url')->nullable();
             $table->text('priceText')->nullable();
             $table->float('price')->nullable();
             $table->foreign('developer_id')->references('id')->on('google_play_store_developers')->onDelete('CASCADE')->onUpdate('CASCADE');

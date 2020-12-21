@@ -15,11 +15,13 @@ use App\Models\GooglePlayStoreCategory;
 use Nelexa\GPlay\GPlayApps;
 
 Route::get('/', function () {
+//    php artisan make:command DemoCron --command=demo:cron
 
-    $games = \App\Models\GooglePlayStoreGame::where('releaseDate' ,'>=', date('y-m-d'))->count();
-    dd($games);
-//    $google = new GPlayApps();
-//  $developer = $google->getPermissions('com.yuwen.perfectart');
-//    dd($developer);
-    return view('welcome');
+    $gameAll = \App\Models\GooglePlayStoreGame::where('id', '>=', 0)->count();
+
+    $games = \App\Models\GooglePlayStoreGame::select(\Illuminate\Support\Facades\DB::raw('DATE_FORMAT(releaseDate, "%Y-%m-%d") as releaseDate, COUNT(releaseDate) as dateCount'))
+        ->groupBy(\Illuminate\Support\Facades\DB::raw('DATE_FORMAT(releaseDate, "%Y-%m-%d")'))
+        ->orderBy('releaseDate', 'DESC')->paginate(15);
+
+    return view('welcome', ['games' => $games, 'count' => $gameAll]);
 });
