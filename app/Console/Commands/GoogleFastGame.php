@@ -101,8 +101,8 @@ class GoogleFastGame extends Command
                 "videoUrl" => $app->getVideo() ? $app->getVideo()->getVideoUrl() : '',
                 "videoImgUrl" => $app->getVideo() ? $app->getVideo()->getImageUrl() : '',
                 "videoId" => $app->getVideo() ? $app->getVideo()->getYoutubeId() : '',
-                "releaseDate" => $app->getReleased() ? $app->getReleased()->format('Y-m-d h:i:s') : date('Y-m-d h:i:s'),
-                "updatedDate" => $app->getUpdated() ? $app->getUpdated()->format('Y-m-d h:i:s') : date('Y-m-d h:i:s'),
+                "releaseDate" => $app->getReleased() ? $app->getReleased()->format('Y-m-d h:i:s') : $app->getUpdated()->format('Y-m-d'),
+                "updatedDate" => $app->getUpdated()->format('Y-m-d h:i:s') ,
                 "oldUpdatedDate" => null,
                 "versionDate" => date('Y-m-d h:i:s'),
                 "oldVersionDate" => null,
@@ -254,17 +254,14 @@ class GoogleFastGame extends Command
                     }
                     $requestCount++;
                     $app = $google->getAppInfo($appId->getId());
-                    $developer = GooglePlayStoreDeveloper::where('devId', $app->getDeveloper()->getId())->first();
+                    $developer = GooglePlayStoreDeveloper::where('devId', $app->getDeveloper()->getId())->orWhere('url', $app->getDeveloper()->getUrl())->first();
 
-                    if (!$app->getCategory()) {
                         if ($category->code !== $app->getCategory()->getId()) {
                             $category = GooglePlayStoreCategory::where('code', $app->getCategory()->getId())->first();
                             if (!$category) {
                                 continue 1;
                             }
                         }
-                    }
-
                     if (!$developer) {
                         $developer = GooglePlayStoreDeveloper::create([
                             'name' => $app->getDeveloper()->getName(),

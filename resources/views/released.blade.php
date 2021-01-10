@@ -15,7 +15,7 @@
         <thead>
         <tr>
             <th scope="col">Release Date</th>
-            <th scope="col">Games ({{$count}}) <br> Apps ({{$appCount}}) <br> Devs ({{$dev}})</th>
+            <th scope="col">Games ({{$count}}) <br> Apps ({{$appCount}}) <br> Developers ({{$dev}})</th>
         </tr>
         </thead>
         <tbody>

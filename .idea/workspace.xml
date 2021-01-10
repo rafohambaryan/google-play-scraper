@@ -20,10 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bdcd98b-8e3a-4774-80c7-bc38b3a3e40f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Helpers/MultiRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/ScraperApi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/released.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/GoogleFastGame.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/GoogleFastGame.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/NewGamesCron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/NewGamesCron.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/TestCron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/TestCron.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/GooglePlayStoreCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GooglePlayStoreCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/GooglePlayStoreDeveloper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GooglePlayStoreDeveloper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/GooglePlayStoreDeveloperEmailAddress.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GooglePlayStoreDeveloperEmailAddress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/GooglePlayStoreGame.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GooglePlayStoreGame.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/GooglePlayStoreGameAddCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GooglePlayStoreGameAddCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/GooglePlayStoreGameScreen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GooglePlayStoreGameScreen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/GooglePlayStoreGameVersion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GooglePlayStoreGameVersion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/RunCronJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RunCronJob.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_20_140309_create_run_cron_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_20_140309_create_run_cron_jobs_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -151,10 +168,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DatabaseDriversLRU" value="mysql&#10;postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testing-api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -163,6 +180,14 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\google-play-scraper\app\Helpers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\google-play-scraper\app\Models" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -196,7 +221,56 @@
       <workItem from="1608558026873" duration="42000" />
       <workItem from="1608559022942" duration="555000" />
       <workItem from="1608565103196" duration="337000" />
-      <workItem from="1608574816073" duration="2472000" />
+      <workItem from="1608574816073" duration="2855000" />
+      <workItem from="1608650068575" duration="779000" />
+      <workItem from="1608735697811" duration="4201000" />
+      <workItem from="1608751989537" duration="1939000" />
+      <workItem from="1608833587555" duration="360000" />
+      <workItem from="1608909256053" duration="4429000" />
+      <workItem from="1608917692081" duration="1170000" />
+      <workItem from="1608925862311" duration="993000" />
+      <workItem from="1608959720181" duration="88000" />
+      <workItem from="1608959866283" duration="59000" />
+      <workItem from="1608959946638" duration="108000" />
+      <workItem from="1608960079037" duration="51000" />
+      <workItem from="1608960169020" duration="1503000" />
+      <workItem from="1608967812011" duration="3329000" />
+      <workItem from="1608975474738" duration="399000" />
+      <workItem from="1608991161220" duration="663000" />
+      <workItem from="1608994014198" duration="2047000" />
+      <workItem from="1609175495390" duration="5157000" />
+      <workItem from="1609182285940" duration="976000" />
+      <workItem from="1609184399316" duration="877000" />
+      <workItem from="1609255280300" duration="100000" />
+      <workItem from="1609262344884" duration="1124000" />
+      <workItem from="1609264003404" duration="805000" />
+      <workItem from="1609348282338" duration="2110000" />
+      <workItem from="1609394410588" duration="1204000" />
+      <workItem from="1609396272139" duration="1321000" />
+      <workItem from="1609397994117" duration="477000" />
+      <workItem from="1609406845966" duration="145000" />
+      <workItem from="1609409033999" duration="2205000" />
+      <workItem from="1609435715402" duration="709000" />
+      <workItem from="1609440835784" duration="1264000" />
+      <workItem from="1609442316954" duration="274000" />
+      <workItem from="1609443762945" duration="18000" />
+      <workItem from="1609445207739" duration="691000" />
+      <workItem from="1609447646541" duration="227000" />
+      <workItem from="1609448017111" duration="543000" />
+      <workItem from="1609450431070" duration="64000" />
+      <workItem from="1609482681141" duration="446000" />
+      <workItem from="1609483975408" duration="24000" />
+      <workItem from="1609595612404" duration="40000" />
+      <workItem from="1609662229276" duration="11000" />
+      <workItem from="1609702721739" duration="293000" />
+      <workItem from="1609950875057" duration="1714000" />
+      <workItem from="1610033025891" duration="598000" />
+      <workItem from="1610185266191" duration="39000" />
+      <workItem from="1610190569822" duration="411000" />
+      <workItem from="1610203802221" duration="646000" />
+      <workItem from="1610208668129" duration="455000" />
+      <workItem from="1610220102822" duration="1232000" />
+      <workItem from="1610267485486" duration="434000" />
     </task>
     <servers />
   </component>
@@ -220,22 +294,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="177" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1608393452434" />
-    <state x="1003" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608469623622">
+    <state x="1003" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609264241079">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1003" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608469623622" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608494543958">
+    <state x="1003" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609264241079" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609396455116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608494543958" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1608396267146">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609396455116" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1610204075515">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608396267146" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610204075515" />
+    <state x="746" y="242" key="NewPhpClassDialog" timestamp="1610190730863">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="746" y="242" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610190730863" />
+    <state x="795" y="442" key="NewPhpFileDialog" timestamp="1608995068832">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="795" y="442" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608995068832" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608494588587">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608494588587" />
+    <state x="667" y="253" width="980" height="534" key="find.popup" timestamp="1609175888300">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="980" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609175888300" />
     <state x="859" y="249" key="ftp.server.browser" timestamp="1608393450991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

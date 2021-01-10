@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="webtools_kobgames_com@45.63.4.209" uuid="b1c92735-e5bb-4de8-b812-da409674d129">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://45.63.4.209:5432/webtools_kobgames_com</jdbc-url>
+    </data-source>
+  </component>
+</project>

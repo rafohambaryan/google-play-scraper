@@ -14,14 +14,14 @@ use Illuminate\Console\Command;
 use Nelexa\GPlay\Exception\GooglePlayException;
 use Nelexa\GPlay\GPlayApps;
 
-class NewGamesCron extends Command
+class DevFast extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'game:cron';
+    protected $signature = 'develop:cron';
 
     /**
      * The console command description.
@@ -220,88 +220,77 @@ class NewGamesCron extends Command
         $requestCount = 0;
         $newGameCount = 0;
         $sorts = [
-          'latest', 'added', "updated", "downloads"
+            'latest', 'added', "updated", "downloads"
         ];
         $google = new GPlayApps();
-        for ($i = 0; $i <= 190000; $i++){
-            $loopCount++;
-            $requestCount++;
-            $curl = curl_init();
+        $developers = GooglePlayStoreDeveloper::where('icon', '!=', '22')->orderBy('id', 'desc')->take(150)->get();
 
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => "http://ws75.aptoide.com/api/7/apps/get?limit=100&offset={$i}&sort=".  $sorts[array_rand($sorts)] ."&order=RAND",
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 0,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET"
-            ));
 
-            $response = curl_exec($curl);
-
-            curl_close($curl);
-
-            $response = json_decode($response, true);
-            if (empty($response['datalist']['list'])){
-                break 1;
-            }
-            foreach ($response['datalist']['list'] as $item) {
+            foreach ($developers as $item) {
                 $loopCount++;
-                $game = GooglePlayStoreGame::where('packagesName', $item['package'])->first();
-                if (!$game) {
-                    try {
-                        $ok++;
-                        $requestCount++;
-                        $app = $google->getAppInfo($item['package']);
-                        $developer = GooglePlayStoreDeveloper::where('devId', $app->getDeveloper()->getId())->orWhere('url', $app->getDeveloper()->getUrl())->first();
-                        $category = GooglePlayStoreCategory::where('code', $app->getCategory()->getId())->first();
+                try {
+                    $devApp = $google->getDeveloperApps($item->devId);
+                    foreach ($devApp as $d) {
+                        $game = GooglePlayStoreGame::where('packagesName', $d->getId())->first();
+                        $loopCount++;
+                        if (!$game) {
+                            try {
+                                $ok++;
+                                $requestCount++;
+                                $app = $google->getAppInfo($d->getId());
+                                $developer = GooglePlayStoreDeveloper::where('devId', $app->getDeveloper()->getId())->orWhere('url', $app->getDeveloper()->getUrl())->first();
+                                $category = GooglePlayStoreCategory::where('code', $app->getCategory()->getId())->first();
 
-                        if (!$category) {
-                            continue 1;
-                        }
-                        if (!$developer) {
-                            $developer = GooglePlayStoreDeveloper::create([
-                                'name' => $app->getDeveloper()->getName(),
-                                'devId' => $app->getDeveloper()->getId(),
-                                'gameCount' => 0,
-                                'email' => $app->getDeveloper()->getEmail(),
-                                'url' => $app->getDeveloper()->getUrl(),
-                                'website' => $app->getDeveloper()->getWebsite(),
-                                'cover' => $app->getDeveloper()->getCover() ? $app->getDeveloper()->getCover()->getUrl() : '',
-                                'icon' => $app->getDeveloper()->getIcon() ? $app->getDeveloper()->getIcon()->getUrl() : '',
-                                'address' => $app->getDeveloper()->getAddress(),
-                            ]);
+                                if (!$category) {
+                                    continue 1;
+                                }
+                                if (!$developer) {
+                                    $developer = GooglePlayStoreDeveloper::create([
+                                        'name' => $app->getDeveloper()->getName(),
+                                        'devId' => $app->getDeveloper()->getId(),
+                                        'gameCount' => 0,
+                                        'email' => $app->getDeveloper()->getEmail(),
+                                        'url' => $app->getDeveloper()->getUrl(),
+                                        'website' => $app->getDeveloper()->getWebsite(),
+                                        'cover' => $app->getDeveloper()->getCover() ? $app->getDeveloper()->getCover()->getUrl() : '',
+                                        'icon' => $app->getDeveloper()->getIcon() ? $app->getDeveloper()->getIcon()->getUrl() : '',
+                                        'address' => $app->getDeveloper()->getAddress(),
+                                    ]);
 
-                            if ($app->getDeveloper()->getEmail()) {
-                                GooglePlayStoreDeveloperEmailAddress::create([
-                                    'dev_id' => $developer->id,
-                                    'email' => $app->getDeveloper()->getEmail()
-                                ]);
+                                    if ($app->getDeveloper()->getEmail()) {
+                                        GooglePlayStoreDeveloperEmailAddress::create([
+                                            'dev_id' => $developer->id,
+                                            'email' => $app->getDeveloper()->getEmail()
+                                        ]);
+                                    }
+                                    $this->createdGameByDeveloper($developer);
+                                } else {
+                                    $developerEmailAddress = GooglePlayStoreDeveloperEmailAddress::where('email', $app->getDeveloper()->getEmail())->where('dev_id', $developer->id)->first();
+                                    if (!$developerEmailAddress && $app->getDeveloper()->getEmail()) {
+                                        GooglePlayStoreDeveloperEmailAddress::create([
+                                            'dev_id' => $developer->id,
+                                            'email' => $app->getDeveloper()->getEmail()
+                                        ]);
+                                    }
+                                }
+                                $this->createdGame($app, $developer, $category);
+                                $newGameCount++;
+                            } catch (GooglePlayException $exception) {
+                                continue 1;
                             }
-                            $this->createdGameByDeveloper($developer);
-                        } else {
-                            $developerEmailAddress = GooglePlayStoreDeveloperEmailAddress::where('email', $app->getDeveloper()->getEmail())->where('dev_id', $developer->id)->first();
-                            if (!$developerEmailAddress && $app->getDeveloper()->getEmail()) {
-                                GooglePlayStoreDeveloperEmailAddress::create([
-                                    'dev_id' => $developer->id,
-                                    'email' => $app->getDeveloper()->getEmail()
-                                ]);
+                            catch (\Exception $exception) {
+                                continue 1;
                             }
                         }
-                        $this->createdGame($app, $developer, $category);
-                        $newGameCount++;
-                    } catch (GooglePlayException $exception) {
-                        continue 1;
                     }
-                    catch (\Exception $exception) {
-                        continue 1;
-                    }
-                }
+                }catch (GooglePlayException $exception){}
+                catch (\Exception $exception){}
+                $item->icon = '22';
+                $item->save();
             }
-        }
+
         RunCronJob::create([
-            'name' => 'aptoide:cron',
+            'name' => 'develop:cron',
             'start' => $start,
             'end' => date('Y-m-d h:i:s'),
             'request' => $requestCount,

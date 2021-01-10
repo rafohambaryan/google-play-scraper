@@ -12,7 +12,9 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "nelexa/google-play-scraper": "^0.1.4"
+        "nelexa/google-play-scraper": "^0.1.4",
+      "ext-curl": "*",
+        "ext-json": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

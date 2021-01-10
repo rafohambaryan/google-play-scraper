@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use App\CModel;
 use Illuminate\Database\Eloquent\Model;
 
-class GooglePlayStoreGame extends Model
+class GooglePlayStoreGame extends CModel
 {
     protected $fillable = [
         'developer_id', 'category_id', 'androidVersion', 'appVersion', 'categoryName', 'contentRating', 'country', 'description', 'fullUrl', 'installs', 'packagesName', 'videoUrl', 'videoImgUrl', 'videoId', 'releaseDate', 'oldUpdatedDate', 'updatedDate',

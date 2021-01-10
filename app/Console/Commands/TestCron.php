@@ -99,8 +99,8 @@ class TestCron extends Command
                 "videoUrl" => $app->getVideo() ? $app->getVideo()->getVideoUrl() : '',
                 "videoImgUrl" => $app->getVideo() ? $app->getVideo()->getImageUrl() : '',
                 "videoId" => $app->getVideo() ? $app->getVideo()->getYoutubeId() : '',
-                "releaseDate" => $app->getReleased() ? $app->getReleased()->format('Y-m-d h:i:s') : date('Y-m-d h:i:s'),
-                "updatedDate" => $app->getUpdated() ? $app->getUpdated()->format('Y-m-d h:i:s') : date('Y-m-d h:i:s'),
+                "releaseDate" => $app->getReleased() ? $app->getReleased()->format('Y-m-d h:i:s') : $app->getUpdated()->format('Y-m-d'),
+                "updatedDate" => $app->getUpdated()->format('Y-m-d h:i:s') ,
                 "oldUpdatedDate" => null,
                 "versionDate" => date('Y-m-d h:i:s'),
                 "oldVersionDate" => null,
@@ -246,12 +246,12 @@ class TestCron extends Command
             'games'
         ];
         $strstr = 0;
-        for($i = 0; $i < 400; $i++){
-            $str = $this->generateRandomString(3);
+        for($i = 0; $i < 700; $i++){
+            $str = $this->generateRandomString(4);
             if (!in_array($str,$strs)){
                 $strs[] = $str;
                 $strstr++;
-                if ($strstr >= 30){
+                if ($strstr >= 20){
                     break 1;
                 }
             }
@@ -264,14 +264,13 @@ class TestCron extends Command
             foreach ($apps as $appId) {
                 $loopCount++;
                 try {
-
                     $game = GooglePlayStoreGame::where('packagesName', $appId->getId())->first();
                     if ($game) {
                         continue 1;
                     }
                     $requestCount++;
                     $app = $google->getAppInfo($appId->getId());
-                    $developer = GooglePlayStoreDeveloper::where('devId', $app->getDeveloper()->getId())->first();
+                    $developer = GooglePlayStoreDeveloper::where('devId', $app->getDeveloper()->getId())->orWhere('url', $app->getDeveloper()->getUrl())->first();
 
                     $category = GooglePlayStoreCategory::where('code', $app->getCategory()->getId())->first();
                     if (!$category) {
